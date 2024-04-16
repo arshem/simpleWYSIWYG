@@ -1,0 +1,54 @@
+<!DOCTYPE html data-theme="dark">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>WYSIWYG Example</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/XXXXXXXXX.js" crossorigin="anonymous"></script> <!-- Update this to yours -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <!-- Your WYSIWYG Editor Information -->
+        <script src="./js/wysiwyg.js"></script>
+        <link href="./wysiwyg.css" rel="stylesheet" />
+    </head>
+    <body onload="wordCount()">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col">
+                    <h1>Blog Post</h1>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="title">Title:</label>
+                            <input type="text" class="form-control" id="title" name="title" value="" required />
+                        </div>
+                        <div class="form-group editor-container">
+                            <label for="chapter">Post:</label>
+                            <div class="toolbar mb-3" style="background-color: #999999;">
+                                <span class="btn" onclick="execmd('bold')" id="boldBtn"><i class="fa-solid fa-bold"></i></span>
+                                <span class="btn" onclick="execmd('italic')" id="italicBtn"><i class="fa-solid fa-italic"></i></span>
+                                <span class="btn" onclick="execmd('underline')" id="underlineBtn"><i class="fa-solid fa-underline"></i></span>
+                                <span class="btn " onclick="execmd('justifyLeft')" id="justifyLeftBtn"><i class="fa-solid fa-align-left"></i></span>
+                                <span class="btn" onclick="execmd('justifyCenter')" id="justifyCenterBtn"><i class="fa-solid fa-align-center"></i></span>
+                                <span class="btn" onclick="execmd('justifyRight')" id="justifyRightBtn"><i class="fa-solid fa-align-right"></i></span>
+                                <span class="btn" onclick="execmd('insertUnorderedList')" id="insertUnorderedListBtn"><i class="fa-solid fa-list"></i></span>
+                                <span class="btn" onclick="execmd('insertOrderedList')" id="insertOrderedListBtn"><i class="fa-solid fa-list-ol"></i></span>
+                                <span class="btn" onclick="insertLink()" id="createLinkBtn"><i class="fa-solid fa-link"></i></span>
+                                <span class="btn" onclick="execmd('unlink')" id="unlinkBtn"><i class="fa-solid fa-link-slash"></i></span>
+                                <span class="btn" onclick="execmd('undo')"><i class="fa-solid fa-rotate-left"></i></span>
+                                <span class="btn" onclick="execmd('redo')"><i class="fa-solid fa-rotate-right"></i></span>
+                            </div>
+
+                            <textarea class="form-control" id="editor" name="post" rows="20" onkeyup="wordCount()"></textarea>
+                        </div>
+                        <p class="text-front"><span id="wordCount">0</span></p>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">POST</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

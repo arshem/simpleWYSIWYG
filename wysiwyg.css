@@ -1,0 +1,28 @@
+.editor-container {
+    max-width: 600px;
+}
+.editor-container textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+.editor-container .toolbar {
+  margin-top: 10px;
+}
+.editor-container .toolbar span {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.editor-container .toolbar span.active {
+  background-color: #fff; /* Highlight active buttons */
+  color: #000;
+}
